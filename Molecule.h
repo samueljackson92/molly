@@ -7,13 +7,16 @@
 
 #include <Eigen/Dense>
 
-class Molecule {
+namespace Molly {
 
-private:
-    Eigen::Vector3d r;
-    Eigen::Vector3d rv;
-    Eigen::Vector3d ra;
-};
+    class Molecule {
 
+    public:
+        Eigen::Vector3d r;
+        Eigen::Vector3d rv;
+        Eigen::Vector3d ra;
+    };
+
+}
 
 #endif //MOLLY_MOLECULE_H

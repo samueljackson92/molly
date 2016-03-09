@@ -1,10 +1,25 @@
 #include <iostream>
-#include "Molecule.h"
+
+#include "SystemParameters.h"
+#include "Simulation.h"
+#include "SystemVisualisation.h"
 
 using namespace std;
+using namespace Molly;
 
 int main(int argc, char** argv) {
-    cout << "Hello, World!" << endl;
-    Molecule m;
+    SystemParameters params;
+    params.density = .8;
+    params.temperature = 5.0;
+    params.delta_time = .005;
+    params.step_average = 10;
+    params.r_cutoff = pow(2., 1./6.);
+
+    Simulation sim(params);
+    sim.set_up();
+//    sim.run();
+
+    SystemVisualisation viz;
+    viz.set_up(&sim);
     return 0;
 }
