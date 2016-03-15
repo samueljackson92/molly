@@ -11,7 +11,7 @@
 namespace Molly {
     class CellMatrix {
     public:
-        CellMatrix(size_t d1=0, size_t d2=0, size_t d3=0);
+        CellMatrix(const double cell_width, size_t d1=0, size_t d2=0, size_t d3=0);
         void resize(size_t d1, size_t d2, size_t d3);
         void add_molecule(Molecule_ptr mol);
         void wrap_cells();
@@ -22,6 +22,7 @@ namespace Molly {
         void create_neighbours();
         void convert_vector_to_index(const Eigen::Vector3d& vec, Eigen::Vector3i& index) const;
 
+        const double cell_width;
         size_t d1, d2, d3;
         std::vector<Cell_ptr> data;
     };

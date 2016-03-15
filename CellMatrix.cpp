@@ -30,7 +30,8 @@ const int OFFSETS[][3] {
 };
 
 
-CellMatrix::CellMatrix(size_t d1, size_t d2, size_t d3)  {
+CellMatrix::CellMatrix(const double cell_width, size_t d1, size_t d2, size_t d3)
+        : cell_width(cell_width) {
     resize(d1, d2, d3);
 }
 
@@ -109,8 +110,7 @@ void CellMatrix::add_molecule(Molecule_ptr mol) {
 }
 
 void CellMatrix::convert_vector_to_index(const Vector3d& vec, Vector3i& index) const {
-    const double cutoff = pow(2., 1./6.);
-    index = (vec / cutoff).cast<int>();
+    index = (vec / cell_width).cast<int>();
     index(0) = index(0) % d1;
     index(1) = index(1) % d2;
     index(2) = index(2) % d3;

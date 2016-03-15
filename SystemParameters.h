@@ -5,6 +5,8 @@
 #ifndef MOLLY_SYSTEMPARAMETERS_H
 #define MOLLY_SYSTEMPARAMETERS_H
 
+#include <memory>
+
 namespace Molly {
     class SystemParameters {
     public:

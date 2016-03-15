@@ -14,7 +14,24 @@ find_package(VTK REQUIRED)
 include(${VTK_USE_FILE})
 
 # make library
-set(SOURCE_FILES Molecule.cpp Molecule.h Simulation.cpp Simulation.h SystemVisualisation.cpp SystemVisualisation.h SystemParameters.cpp SystemParameters.h Property.cpp Property.h Cell.cpp Cell.h CellMatrix.cpp CellMatrix.h)
+set(SOURCE_FILES
+        Molecule.cpp
+        Molecule.h
+        Simulation.cpp
+        Simulation.h
+        SystemVisualisation.cpp
+        SystemVisualisation.h
+        SystemParameters.cpp
+        SystemParameters.h
+        Property.cpp
+        Property.h
+        Cell.cpp
+        Cell.h
+        CellMatrix.cpp
+        CellMatrix.h
+)
+
+
 add_library(molly STATIC ${SOURCE_FILES})
 target_link_libraries(molly ${VTK_LIBRARIES})
 

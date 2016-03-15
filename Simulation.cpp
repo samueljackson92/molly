@@ -14,7 +14,7 @@ using namespace Eigen;
 using namespace Molly;
 
 Simulation::Simulation(SystemParameters params)
-        : params(params), step_limit(10), step_count(0), vir_sum(0), u_sum(0) {
+        : params(params), step_limit(10), step_count(0), vir_sum(0), u_sum(0), cell_matrix(params.r_cutoff) {
 
 }
 

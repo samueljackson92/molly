@@ -9,7 +9,8 @@
 using namespace Molly;
 
 TEST_CASE( "Create Cell Matrix", "[cell matrix]" ) {
-    CellMatrix matrix(10, 10, 10);
+    const double cell_width = pow(2., 1./6.);
+    CellMatrix matrix(cell_width, 10, 10, 10);
     Cell_ptr cell = matrix(0, 0, 0);
 
     REQUIRE( cell->get_molecules().size() == 0 );
@@ -17,7 +18,8 @@ TEST_CASE( "Create Cell Matrix", "[cell matrix]" ) {
 }
 
 TEST_CASE( "Check matrix indexing", "[cell matrix]") {
-    CellMatrix matrix(10, 10, 10);
+    const double cell_width = pow(2., 1./6.);
+    CellMatrix matrix(cell_width, 10, 10, 10);
 
     // valid indexing operations
     REQUIRE_NOTHROW( matrix(9, 9, 9) );
@@ -29,7 +31,8 @@ TEST_CASE( "Check matrix indexing", "[cell matrix]") {
 }
 
 TEST_CASE( "Resize matrix", "[cell matrix]") {
-    CellMatrix matrix(10, 10, 10);
+    const double cell_width = pow(2., 1./6.);
+    CellMatrix matrix(cell_width, 10, 10, 10);
 
     // valid indexing operations
     REQUIRE_NOTHROW( matrix(9, 9, 9) );
@@ -47,7 +50,8 @@ TEST_CASE( "Resize matrix", "[cell matrix]") {
 }
 
 TEST_CASE( "Add Molecule", "[cell matrix]") {
-    CellMatrix matrix(10, 10, 10);
+    const double cell_width = pow(2., 1./6.);
+    CellMatrix matrix(cell_width, 10, 10, 10);
 
     Molecule_ptr mol = std::make_shared<Molecule>();
     mol->r(0) = 0;
@@ -60,7 +64,8 @@ TEST_CASE( "Add Molecule", "[cell matrix]") {
 }
 
 TEST_CASE( "Move Molecule", "[cell matrix]") {
-    CellMatrix matrix(10, 10, 10);
+    const double cell_width = pow(2., 1./6.);
+    CellMatrix matrix(cell_width, 10, 10, 10);
 
     Molecule_ptr mol = std::make_shared<Molecule>();
     mol->r(0) = 0;
