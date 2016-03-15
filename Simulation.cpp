@@ -19,14 +19,13 @@ Simulation::Simulation(SystemParameters params)
 }
 
 void Simulation::set_up() {
-
-    printf("MOLLY\n--------------------------------------------------------------------------------------------\n");
-    printf("%5s %8s %7s %7s %7s %7s %7s %7s %7s\n",
-           "step", "time", "sum", "tot_sum", "tot_sq", "kin_sum", "kin_sq", "press_sum", "press_sq");
+    print_header();
     init_props();
     init_cells();
     init_coordinates();
 }
+
+
 
 void Simulation::init_props() {
     // create unit cell of volume x * y * z
@@ -230,4 +229,10 @@ void Simulation::clear_properties() {
     kinetic_energy.clear();
     total_energy.clear();
     pressure.clear();
+}
+
+void Simulation::print_header() {
+    printf("MOLLY\n--------------------------------------------------------------------------------------------\n");
+    printf("%5s %8s %7s %7s %7s %7s %7s %7s %7s\n",
+           "step", "time", "sum", "tot_sum", "tot_sq", "kin_sum", "kin_sq", "press_sum", "press_sq");
 }

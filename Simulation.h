@@ -53,6 +53,7 @@ namespace Molly {
         void init_props();
         void init_cells();
         void init_coordinates();
+        void print_header();
         void integrate(int part);
         void apply_boundary_check(Eigen::Vector3d& vector);
         void update_bound(double& value, const double& bound);
