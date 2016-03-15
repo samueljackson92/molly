@@ -10,9 +10,9 @@ using namespace Molly;
 int main(int argc, char** argv) {
     SystemParameters params;
     params.density = .8;
-    params.temperature = 5.0;
+    params.temperature = 1.0;
     params.delta_time = .005;
-    params.step_average = 10;
+    params.step_average = 100;
     params.r_cutoff = pow(2., 1./6.);
 
     Simulation sim(params);

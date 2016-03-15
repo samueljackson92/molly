@@ -8,7 +8,7 @@
 using namespace Molly;
 
 TEST_CASE("Create Simulation", "[simulation]" ) {
-    Simulation sim;
-    sim.set_up();
-    sim.run();
+//    Simulation sim;
+//    sim.set_up();
+//    sim.run();
 }

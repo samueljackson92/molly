@@ -17,6 +17,7 @@ namespace Molly {
         Eigen::Vector3d ra;
     };
 
+    typedef std::shared_ptr<Molecule> Molecule_ptr;
 }
 
 #endif //MOLLY_MOLECULE_H
